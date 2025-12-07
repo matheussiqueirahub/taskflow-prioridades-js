@@ -1,0 +1,221 @@
+:root {
+    --bg-body: #0f172a;
+    --bg-card: #1e293b;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --accent: #3b82f6;
+    --accent-hover: #2563eb;
+    --danger: #ef4444;
+    --success: #22c55e;
+
+    --priority-high: #ef4444;
+    --priority-med: #f59e0b;
+    --priority-low: #3b82f6;
+
+    --radius: 12px;
+    --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-body);
+    color: var(--text-primary);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.app-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.05em;
+}
+
+.app-header h1 span {
+    color: var(--accent);
+}
+
+.app-header p {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* Input Section */
+.task-input-section {
+    background-color: var(--bg-card);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.input-group input {
+    width: 100%;
+    background: transparent;
+    border: 2px solid #334155;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.actions-group {
+    display: flex;
+    gap: 1rem;
+}
+
+select {
+    background-color: #334155;
+    color: var(--text-primary);
+    border: none;
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.btn-primary {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Filters */
+.filters-section {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.filter-btn {
+    background: transparent;
+    border: 1px solid #334155;
+    color: var(--text-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    white-space: nowrap;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
+/* Task List */
+.task-list-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.task-stats {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-align: right;
+}
+
+.task-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.task-item {
+    background-color: var(--bg-card);
+    padding: 1rem;
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.task-item.priority-alta {
+    border-left-color: var(--priority-high);
+}
+
+.task-item.priority-média {
+    border-left-color: var(--priority-med);
+}
+
+.task-item.priority-baixa {
+    border-left-color: var(--priority-low);
+}
+
+.task-item.concluida {
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.task-content {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.task-date {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin-top: 0.25rem;
+}
+
+.task-actions button {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary);
+    padding: 0.5rem;
+    border-radius: 50%;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-actions button:hover {
+    background-color: #334155;
+    color: var(--success);
+}

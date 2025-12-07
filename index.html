@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>TaskMaster <span>Pro</span></h1>
+            <p>Gerencie suas metas com alta performance.</p>
+        </header>
+
+        <section class="task-input-section">
+            <div class="input-group">
+                <input type="text" id="taskDesc" placeholder="O que precisa ser feito?" autocomplete="off">
+            </div>
+            <div class="actions-group">
+                <select id="taskPriority">
+                    <option value="baixa">Baixa Prioridade</option>
+                    <option value="média" selected>Média Prioridade</option>
+                    <option value="alta">Alta Prioridade</option>
+                </select>
+                <button id="btnAddTask" class="btn-primary">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    Adicionar
+                </button>
+            </div>
+        </section>
+
+        <section class="filters-section">
+            <button class="filter-btn active" data-filter="all">Todas</button>
+            <button class="filter-btn" data-filter="p-alta">Alta</button>
+            <button class="filter-btn" data-filter="p-media">Média</button>
+            <button class="filter-btn" data-filter="p-baixa">Baixa</button>
+            <button class="filter-btn" data-filter="completed">Concluídas</button>
+        </section>
+
+        <section class="task-list-section">
+            <div class="task-stats">
+                <span id="pendingCount">0 pendentes</span>
+            </div>
+            <ul id="taskList" class="task-list">
+                <!-- Tasks inserted here by JS -->
+            </ul>
+        </section>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

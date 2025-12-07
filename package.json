@@ -1,0 +1,20 @@
+{
+  "name": "taskflow-prioridades-js",
+  "version": "1.0.0",
+  "description": "Sistema de tarefas em JavaScript com prioridades, filtros, ordenação e marcação de concluídas, utilizando manipulação avançada de arrays.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test test/*.test.js",
+    "examples": "node examples.js"
+  },
+  "keywords": [
+    "task-manager",
+    "javascript",
+    "functional-programming",
+    "array-methods"
+  ],
+  "author": "",
+  "license": "MIT"
+}

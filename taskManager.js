@@ -20,9 +20,18 @@ const PRIORITY_VALUES = {
 };
 
 /**
- * Contador para garantir IDs únicos
+ * Gera um ID único baseado em timestamp e aleatoriedade
+ * @returns {number} ID único para a tarefa
  */
-let taskIdCounter = 0;
+function generateTaskId(existingTasks) {
+  // Usa timestamp + número aleatório para evitar colisões
+  // Em um ambiente real, crypto.randomUUID() seria preferível
+  let id;
+  do {
+    id = Date.now() + Math.floor(Math.random() * 1000);
+  } while (existingTasks.some(task => task.id === id));
+  return id;
+}
 
 /**
  * Adiciona uma nova tarefa à lista
@@ -42,7 +51,7 @@ export function addTask(tasks, description, priority = 'média') {
   }
 
   const newTask = {
-    id: Date.now() + taskIdCounter++,
+    id: generateTaskId(tasks),
     description: description.trim(),
     priority,
     completed: false,
